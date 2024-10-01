@@ -1,14 +1,52 @@
 {% extends "layout.html" %}
-{% load static %}
 
-{% block css_files %}
+{% block pageTitle %}Ana Sayfa{% endblock pageTitle %}
 
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
-
-{% endblock %}
+{% include "paritals/_header.html" %}
 
 {% block content %}
+    
+    {% block hero %}
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">İstediğin Zaman, İstediğin Yerden.</h1>
+            <p class="col-lg-10 fs-4">Çağımız dünyasının telaşından uzakta, ağır sırt çantaları taşımadan istediğiniz yerde ve istediğiniz zaman ders alabilirsiniz ya da verebilirsiniz.</p>
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email Adresi</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Şifre</label>
+            </div>
+            <div class="form-group mb-3">
+                <select class="form-control" id="floatingFormControlSelect1">
+                  <option>Öğretmen</option>
+                  <option>Öğrenci</option>
+                </select>
+            </div>
+            <div class="checkbox mb-3">
+                <label>
+                <input type="checkbox" value="remember-me"> Beni Hatırla
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Üye Ol</button>
+            <hr class="my-4">
+            <small class="text-body-secondary">Üye Ol butonuna tıklayarak koşulları ve şartları kabul etmiş olursunuz.</small>
+            </form>
+        </div>
+        </div>
+    </div>
+    {% endblock hero %}
 
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus veritatis eos blanditiis. Illo, voluptatem.</p>
 
 {% endblock %}
+
+
+
+{% include "paritals/_footer.html" %}
+
