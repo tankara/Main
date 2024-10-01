@@ -8,7 +8,4 @@ urlpatterns = [
     path('hakkimizda', views.about),
     path('iletisim', views.contact),
     path('sss', views.sss),
-
-    
-
 ]
