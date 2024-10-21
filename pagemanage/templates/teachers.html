@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block css_files %}
+
+<link rel="stylesheet" href="{% static "css/style.css" %}">
+
+{% endblock%}
+
+{% include "partials/_header.html" %}
+
+{% block content %}
+
+<div class="card-group">
+    
+    {% for teacher in teachers  %}
+    
+    <div class="card mx-2 my-2">
+        <img class="card-img-top" data-src="holder.js/100x180/" src="{{teacher.pic}}" alt="Card image cap">
+        <div class="card-body">
+            <h4 class="card-title">{{teacher.name}}</h4>
+            <p class="card-text">{{teacher.branch}}</p>
+            <p class="card-text">{{teacher.exp}}</p>
+        </div>
+    </div>
+    
+    
+    {% endfor %}
+    
+</div>
+
+{% endblock %}
+
+{% include "partials/_footer.html" %}
+
