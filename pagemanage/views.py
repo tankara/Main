@@ -1,10 +1,24 @@
 from django.shortcuts import render
 
+services_list = [
+    {"name":"Birebir Çevrimiçi Özel Dersler",
+     "explanation":"Çevrimiçi oturumlar sırasında bir öğretmen ve bir öğrenci tarafından işlenen dersler.",
+     "pic":"img/birebir.png"
+     },
+     {"name":"Grup Çevrimiçi Özel Dersler",
+     "explanation":"Çevrimiçi oturumlar sırasında bir öğretmen ve aynı seviyedeki öğrenciler tarafından işlenen dersler.",
+     "pic":"img/grup.png"
+     },
+]
+
 def index(request):
     return render(request,'index.html')
 
 def services(request):
-    return render(request,'hizmetlerimiz.html')
+    data = {
+        "services":services_list
+    }
+    return render(request,'hizmetlerimiz.html',data)
 
 def about(request):
     return render(request,'hakkimizda.html')
@@ -15,31 +29,7 @@ def contact(request):
 def sss(request):
     return render(request,'sss.html')
 
-teachers_list = [
-    {"name":"cafer",
-     "branch":"kimya",
-     "exp": 10,
-     "pic":"https://picsum.photos/id/237/200/300"
-     },
-     {"name":"selahattin",
-     "branch":"edebiyat",
-     "exp": 7,
-     "pic":"https://picsum.photos/id/237/200/300"
-     },
-     {"name":"pınar",
-     "branch":"fizik",
-     "exp": 2,
-     "pic":"https://picsum.photos/id/237/200/300"
-     },
-     {"name":"ibrahim",
-     "branch":"ilkokul",
-     "exp": 30,
-     "pic":"https://picsum.photos/id/237/200/300"
-     }
-]
-
 def teachers(request):
     data= {
-        "teachers": teachers_list
     }
     return render(request,'teachers.html',data)
