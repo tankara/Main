@@ -1,1 +1,15 @@
- 
+services:
+  - type: web
+    name: academio
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn AcademioProject.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        value: postgres://postgres:postgres@localhost:5432/academio
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: "3.9"
+      - key: WEB_CONCURRENCY
+        value: "4" 
