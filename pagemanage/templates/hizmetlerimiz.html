@@ -10,59 +10,63 @@
 {% include "partials/_header.html" %}
 
 {% block content %}
-    <div class="container">
+    <div class="container py-5">
         <div class="row">
-            <div class="col-6">
-                <h1>Hizmetlerimiz</h1>
-                <p>Öğrencinizin ihtiyaçlarına uygun şekilde eğitim bilimleri ekseninde özel olarak oluşturulmuş yöntemlerle kaliteli eğitim bir tık uzağınızda. </p>
-                <h3>İstediğiniz Zaman, İstediğiniz Yerde.</h1>
-                <div class="row">
-                    <div class="col-6 my-2">
-                        <div class="card">
-                            <div class="card-body">
+            <div class="col-lg-6 mb-4">
+                <h1 class="display-4 mb-3">Hizmetlerimiz</h1>
+                <p class="lead mb-4">Öğrencinizin ihtiyaçlarına uygun şekilde eğitim bilimleri ekseninde özel olarak oluşturulmuş yöntemlerle kaliteli eğitim bir tık uzağınızda.</p>
+                <h3 class="mb-4">İstediğiniz Zaman, İstediğiniz Yerde</h3>
+                
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="bi bi-person display-4 text-primary mb-3"></i>
                                 <h4 class="card-title">Alanında Uzman Kadro</h4>
                                 <p class="card-text">Hepsi deneyimli öğretmen kadromuzla başarı artık çok yakın!</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 my-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <i class="bi bi-mortarboard display-1 text-warning"></i>
+                    <div class="col-md-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="bi bi-mouse2 display-4 text-warning mb-3"></i>
                                 <h4 class="card-title">Tek Tıkla Özel Ders</h4>
                                 <p class="card-text">Kaydolun ve size en uygun öğretmen ile hemen derse başlayın.</p>
                             </div>
                         </div>
                     </div>
-                </div><div class="row">
-                    <div class="col-6 my-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <i class="bi bi-mortarboard display-1 text-warning"></i>
+                    <div class="col-md-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="bi bi-laptop display-4 text-success mb-3"></i>
                                 <h4 class="card-title">Uzaktan Özel Ders</h4>
                                 <p class="card-text">Grafik tabletler ile sınıf ortamını ve tahtayı aratmayan eğitim ortamımızda yalnızca konuya odaklanın.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 my-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <i class="bi bi-mortarboard display-1 text-warning"></i>
+                    <div class="col-md-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="bi bi-geo-alt display-4 text-danger mb-3"></i>
                                 <h4 class="card-title">Her Yerden Katılım</h4>
                                 <p class="card-text">"O saatte yetişemem", "O tarihte tatilde olacağım" sorunlarına son! Her yerden, her zaman özel ders.</p>
                             </div>
                         </div>
                     </div>
-                    <img class="my-5" src="{% static "img/hizmetler-banner.png" %}" alt="">
+                </div>
+                
+                <div class="mt-5">
+                    <img class="img-fluid rounded shadow" src="{% static "img/hizmetler-banner.png" %}" alt="Hizmetler Banner">
                 </div>
             </div>
-            <div class="container-fluid card-group col-6 justify-content-center">
             
-                {% for service in services %}
-                
+            <div class="col-lg-6">
+                <div class="row g-4">
+                    {% for service in services %}
                     <div class="col-md-6">
-                        <div class="card">
-                            <img class="card-img-top" src="{% static service.pic %}" alt="Card image cap">
+                        <div class="card h-100 shadow">
+                            <img class="card-img-top" src="{% static service.pic %}" alt="{{service.name}}">
                             <div class="card-body">
                                 <h4 class="card-title">{{service.name}}</h4>
                                 <p class="card-text">{{service.explanation}}</p>
